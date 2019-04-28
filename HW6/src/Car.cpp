@@ -2,12 +2,12 @@
 #include <string>
 #include <iostream>
 
-namespace car{
+namespace vehicle{
 
     const BadVehicleState Car::BAD_VEHICLE_NOKEYS_DRIVE("Can't drive a car with no keys!");
 
     Car::Car(Color _color, Owner _owner) : color(_color), keys(true), owner(_owner) {
-        
+
         std::cout << "Signing Papers and giving " << _owner << " the keys" << std::endl;
     }
       Car::~Car(){
@@ -32,6 +32,6 @@ namespace car{
         else
         throw BAD_VEHICLE_NOKEYS_DRIVE;
     }
-  
-    
+
+
 }

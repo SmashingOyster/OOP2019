@@ -1,6 +1,6 @@
 #include "../include/BadVehicleState.h"
 
-namespace car{
+namespace vehicle{
     BadVehicleState::BadVehicleState(const std::string &_issue)
     : issue(_issue)
     {

@@ -10,7 +10,7 @@ namespace vehicle{
         private: const Color color;
         private: const Owner owner;
         private: bool keys;
-        public: Car(Color _color, Owner _owner);A
+        public: Car(Color _color, Owner _owner);
         public: Color getColor() const;
         public: Owner getOwner() const;
         public: bool hasKeys() const;

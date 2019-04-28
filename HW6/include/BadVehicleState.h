@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-namespace car{
+namespace vehicle{
     class BadVehicleState{
         private: std::string issue;
         public: BadVehicleState(const std::string &_issue);
