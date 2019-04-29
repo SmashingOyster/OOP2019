@@ -12,6 +12,7 @@ namespace vehicle{
     private: const Owner owner;
     private: bool keys;
     public: PlaneCar(Color _color, Owner _owner, bool _keys);
+    public: void menu() const;
     public: Color getColor() const;
     public: Owner getOwner() const;
     public: bool getKeys() const;
