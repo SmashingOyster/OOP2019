@@ -16,7 +16,7 @@ namespace vehicle{
     public: Owner getOwner() const;
     public: bool getKeys() const;
     public: void setHasKeys(bool _keys);
-    public void drive(int mode) const override;
+    public void drive() const override;
     public: ~PlaneCar();
     public: static const BadVehicleState BAD_VEHICLE_NOKEYS_DRIVE;
   }
