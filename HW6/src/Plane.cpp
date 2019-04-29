@@ -26,7 +26,7 @@ namespace vehicle{
   void Plane::setHasKeys(bool _keys){
     keys = _keys;
   }
-  void Plane::drive() const{
+  void Plane::drive() const override{
     if(keys == true){
       std::cout << getOwner() " is flying a " << getColor() << " plane. They
       are approximately 1700 ft above the ground" << std::endl;
