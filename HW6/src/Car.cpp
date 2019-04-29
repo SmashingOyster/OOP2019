@@ -19,7 +19,7 @@ namespace vehicle{
     Color Car::getColor() const {
             return color;
     }
-    bool Car::hasKeys()const {
+    bool Car::getKeys()const {
         return keys;
     }
     void Car::setHasKeys(bool _keys){

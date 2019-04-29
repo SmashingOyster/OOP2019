@@ -2,5 +2,5 @@
 
 namespace vehicle{
     enum Owner{
-        BOB, KATE, JOHN, BILL, ETHAN, MITCHELL};
+        BOB, KATE, JOHN, BILL, ETHAN, MITCHELL, BETTY};
 }
