@@ -5,8 +5,8 @@ using namespace car;
 
 
 int main(){
-    Car EthanBlackCar(Color::BLACK, Owner::ETHAN);
+    Car *EthanBlackCar = new Car(Color::BLACK, Owner::ETHAN, bool keys=true);
    // EthanBlackCarPtr->setHasKeys(false);
-   EthanBlackCar.drive();
+  //. EthanBlackCar->drive();
 
 }
