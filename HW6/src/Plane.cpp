@@ -5,7 +5,8 @@
 namespace vehicle{
   const BadVehicleState Plane::BAD_VEHICLE_NOKEYS_DRIVE("Can't Drive a plane with no keys!");
 
-  Plane::Plane(Color _color, Owner _owner) : color(_color), keys(true), owner(_owner){
+  Plane::Plane(Color _color, Owner _owner)
+      : Vehicle(_color, _owner, _keys) {
 
     std::cout << "Signing papers and giving " << _owner << " the keys" << std::endl;
 
