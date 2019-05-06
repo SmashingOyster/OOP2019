@@ -15,7 +15,6 @@ namespace vehicle{
         public: virtual bool getKeys();
         public: virtual void drive();
         public: virtual ~Vehicle();
-        public: static const BadVehicleState BAD_VEHICLE_NOKEYS_DRIVE;
 
     };
 }

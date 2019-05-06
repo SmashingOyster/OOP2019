@@ -1,12 +1,13 @@
 #include "../include/Car.h"
 #include "../include/Owner.h"
-using namespace car;
+using namespace vehicle;
 
 
 
 int main(){
-    Car EthanBlackCar(Color::BLACK, Owner::ETHAN);
+  Vehicle EthanBlackVehicle(Color::BLACK, Owner::BETTY, true);
+  Vehicle::Car EthanBlackCar(Color::BLACK, Owner::BETTY, true);
    // EthanBlackCarPtr->setHasKeys(false);
-   EthanBlackCar.drive();
-
+  // EthanBlackCar.drive();
+   return 0;
 }
