@@ -31,7 +31,7 @@ class Car extends VehicularVehicle{
     constructor(engine, owner, color) {
         super(engine, owner, color);
         console.log("Signing the papers for your car..");
-        this.haskeys = true;
+        this._haskeys = true;
     }
 
     drive(){
