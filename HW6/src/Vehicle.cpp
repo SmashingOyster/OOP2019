@@ -4,24 +4,35 @@
 
 namespace vehicle{
 
-  Vehicle::Vehicle(Color _color, Owner _owner)
+  Vehicle::Vehicle(Color _color, Owner _owner, bool _keys)
   : color(_color), owner(_owner), keys(true){
     std::cout << "Signing papers and creating Abstract Vehicle, giving " << _owner << " the keys" << std::endl;
   }
   Vehicle::~Vehicle(){
     std::cout << "Selling vehicle and salvaging parts..." << std::endl;
   }
-
-  Vehicle::getOwner() {
+  void Vehicle::setOwner(Owner _owner){
+    owner = _owner;
+  }
+  Owner Vehicle::getOwner() const{
     return owner;
   }
-  Vehicle::getColor() {
+  Color Vehicle::getColor() const{
     return color;
   }
-  Vehicle::drive(){
-    if(keys == true){
-    std::cout << getOwner() << " is driving Abstract " << getColor() << " Vehicle" << std::endl;
+  void Vehicle::setColor(Color _color){
+    color = _color;
   }
+  bool Vehicle::setKeys(bool _keys){
+    keys = _keys;
+  }
+  bool Vehicle::getKeys() const{
+    return keys;
+  }
+  void Vehicle::drive(){
+    if(getKeys() == true){
+    std::cout << getOwner() << " is driving Abstract " << getColor() << " Vehicle" << std::endl;
+    }
   }
 
 }

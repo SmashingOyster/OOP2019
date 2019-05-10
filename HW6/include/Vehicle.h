@@ -9,13 +9,14 @@ namespace vehicle{
         private: Color color;
         private: Owner owner;
         private: bool keys;
-        public: Vehicle(Color _color=Color::BLACK, Owner _owner=Owner::BETTY);
+        public: Vehicle(Color _color=Color::BLACK, Owner _owner=Owner::BETTY, bool _keys=false);
         public: virtual Color getColor() const;
-        public: virtual Color setColor(Color color);
+        public: virtual void setColor(Color _color);
+        public: virtual void setOwner(Owner __owner);
         public: virtual Owner getOwner() const;
-        public: virtual bool getKeys();
+        public: virtual void setKeys(bool _keys);
+        public: virtual bool getKeys() const;
         public: virtual void drive() = 0;
         public: virtual ~Vehicle();
-
     };
 }
