@@ -12,14 +12,14 @@ namespace vehicle{
       std::cout << Plane::getOwner() << " is the owner \n"
       << " they take priority and we paint it " << Plane::getColor() << std::endl;
     }
-    PlaneCar::menu() const{
+    void PlaneCar::menu() const{
       std::cout<< "Welcome to the PlaneCar UserInterface, \n"
       << "To use the plane mode, press 1 \n"
       << "To use the car mode, press 0 \n"
       << "Press 3 to deactivate engine.." << std::endl;
     }
 
-    void PlaneCar::drive() const override{
+    void PlaneCar::drive() const {
       int choice;
       while(choice != 3){
       menu();
@@ -33,7 +33,7 @@ namespace vehicle{
       }
       else if(choice == 0){
         std::system("cls");
-        std::cout << "Entering Car Mode... Deploying wheels and deactivating jets..." << std:endl;
+        std::cout << "Entering Car Mode... Deploying wheels and deactivating jets..." << std::endl;
         Car::drive();
         menu();
       }
