@@ -4,7 +4,7 @@
 
 namespace vehicle{
 
-  Vehicle::Vehicle(Color _color, Owner _owner, bool _keys)
+  Vehicle::Vehicle(Color _color, Owner _owner)
   : color(_color), owner(_owner), keys(true){
     std::cout << "Signing papers and creating Abstract Vehicle, giving " << _owner << " the keys" << std::endl;
   }
