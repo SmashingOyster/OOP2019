@@ -50,5 +50,26 @@ class Citizen extends Authentication{
 }
 
 class Employee extends Authentication{
+  constructor(id, name, authNum){
+    super(id, name, authNum);
+    console.log("Making an employee");
+  }
+  makeTransaction(){
+    console.log("Processesing Transaction...");
+    console.log("This is a Employee Transaction... id: " + this.id + " Name: " + this.Name
+  + " Authentication # : " this.authNum)
+  }
+  get id(){
+    return this._id;
+  }
+  get name(){
+    return this._name;
+  }
+  get authNum(){
+    return this._authNum;
 
 }
+
+
+exports.Citizen = Citizen;
+exports.Employee = Employee;
