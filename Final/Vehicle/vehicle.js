@@ -66,7 +66,7 @@ class Person{
       if(wantedpur <= this._balance){
         console.log("Balance meets sufficient funds... Processing transaction...");
         newbal = (this._balance - wantedpur);
-        balance(newbal);
+        this._balance = newbal;
         console.log("Resulting balance... " + this._balance);
 
       }
@@ -74,14 +74,14 @@ class Person{
         console.log("You have insufficient funds.. checking your credit..");
         if(this._credit == "GOOD"){
           newbal = (wantedpur - this._balance);
-          balance(newbal);
+          this._balance = newbal;
           console.log("Your Credit looks good! Giving you the sufficient funds..");
 
         }
         else if(this._credit == "BAD") {
           console.log("Your Credit is bad.. looks like we cant give you the funds");
           newbal = (this._balance - wantedpur);
-          balance(newbal);
+          this._balance = newbal;
 
         }
         else{
@@ -174,7 +174,7 @@ class Car extends Vehicle{
     }
   }
 drive(){
-  console.log("Driving a "  + color() +"  Model: " + model() + " Car");
+  console.log("Driving a "  + this._color + " Model: " + this._model + " Car");
   }
 }
 
@@ -232,7 +232,7 @@ class Plane extends Vehicle{
 fly(){
   if(this._owner.license() == "PLANE"){
 
-  console.log("Flying a "  + color() +"  Model: " + model() + " Plane");
+  console.log("Flying a "  + this._color +"  Model: " + this._model + " Plane");
     }
   }
 }
@@ -247,11 +247,11 @@ class Dealership{
 
   interaction(){
     console.log("Hello, thank you for coming in to buy a Plane or Car");
-    if(this._cutstomer.license() == "CAR"){
-      this._customer.makepurchase(this._car.price());
+    if(this._customer.license == "CAR"){
+      this._customer.makepurchase(this._car.price);
       }
-    else if (this._customer.license() == "PLANE") {
-        this._customer.makepurchase(this._plane.price());
+    else if (this._customer.license == "PLANE") {
+        this._customer.makepurchase(this._plane.price);
       }
     else{
       throw new Error("Wrong input for interaction");
@@ -261,7 +261,7 @@ class Dealership{
 
   testdrive(){
     console.log("Checking license");
-    if(this._cutstomer.license() == "CAR"){
+    if(this._customer.license() == "CAR"){
         this._car.drive();
     }
     if(this._customer.license() == "PLANE"){
@@ -279,6 +279,7 @@ Car.BAD_VEHICLE_MODEL_NOTSET = new BadVehicleState("There must be a model for yo
 exports.Plane = Plane;
 exports.Car = Car;
 exports.Person = Person;
+exports.Dealership = Dealership;
 // Ideas: have abstract class handle checking user info
 // have car or plane drive call for a simpler class
 // owner is another class object. Customer, checks user credit
