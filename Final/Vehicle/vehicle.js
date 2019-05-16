@@ -244,14 +244,42 @@ class Dealership{
     this._car = car;
     this._customer = customer;
   }
+  get customer(){
+    return this._customer;
+  }
+  set customer(newcust){
+    if(typeof newcust == "object"){
+      this._customer = newcust;
+    }
+  }
+  set car(newcar){
+    if(typeof newcar == "object"){
+      this._car = newcar;
+    }
+  }
+  get car(){
+    return this._car;
+  }
+  get plane(){
+    return this._plane;
+  }
+  set plane(newplane){
+    if(typeof newplane == "object"){
+      this._plane = newplane;
+    }
+  }
 
-  interaction(){
-    console.log("Hello, thank you for coming in to buy a Plane or Car");
-    if(this._customer.license == "CAR"){
+  interaction(newcust){
+    console.log("Hello, thank you for coming in to the DimmaDealership");
+    if(newcust.license == "CAR"){
       this._customer.makepurchase(this._car.price);
+      //this._car = null;
+      console.log("Thank you for purchasing a car. Hope you enjoy!");
       }
     else if (this._customer.license == "PLANE") {
         this._customer.makepurchase(this._plane.price);
+        console.log("Thank you for purchasing a plane. Hope you enjoy!");
+      //  this._plane = null;
       }
     else{
       throw new Error("Wrong input for interaction");
@@ -261,10 +289,10 @@ class Dealership{
 
   testdrive(){
     console.log("Checking license");
-    if(this._customer.license() == "CAR"){
+    if(this._customer.license == "CAR"){
         this._car.drive();
     }
-    if(this._customer.license() == "PLANE"){
+    if(this._customer.license == "PLANE"){
         this._plane.fly();
     }
   }
