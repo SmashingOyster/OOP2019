@@ -68,7 +68,7 @@ class Person{
         newbal = (this._balance - wantedpur);
         balance(newbal);
         console.log("Resulting balance... " + this._balance);
-      //  return true;
+
       }
       else {
         console.log("You have insufficient funds.. checking your credit..");
@@ -76,13 +76,13 @@ class Person{
           newbal = (wantedpur - this._balance);
           balance(newbal);
           console.log("Your Credit looks good! Giving you the sufficient funds..");
-        //  return true;
+
         }
         else if(this._credit == "BAD") {
           console.log("Your Credit is bad.. looks like we cant give you the funds");
           newbal = (this._balance - wantedpur);
           balance(newbal);
-        //  return true;
+
         }
         else{
           throw Person.BAD_CUSTOMER_CREDIT_NOTSET;
@@ -256,11 +256,17 @@ class Dealership{
     else{
       throw new Error("Wrong input for interaction");
       }
+    }
 
-  }
+
   testdrive(){
-    console.log("testdriving");
-
+    console.log("Checking license");
+    if(this._cutstomer.license() == "CAR"){
+        this._car.drive();
+    }
+    if(this._customer.license() == "PLANE"){
+        this._plane.fly();
+    }
   }
 }
 

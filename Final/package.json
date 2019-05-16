@@ -11,9 +11,5 @@
   "dependencies": {
     "chai": "^4.2.0"
   }
-  "devDependencies": {
-  "chai": "*",
-  "mocha": "*"
-}, "//": "mocha is our preference, but you can use any test runner you like"
 
 }
