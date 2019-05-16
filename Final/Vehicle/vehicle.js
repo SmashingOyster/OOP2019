@@ -258,7 +258,6 @@ class Dealership{
     this._car = car;
     this._customer = customer;
   }
-
   get customer(){
     return this._customer;
   }
@@ -268,7 +267,7 @@ class Dealership{
     }
   }
   set car(newcar){
-    if(typeof newcar == "string"){
+    if(typeof newcar == "object"){
       this._car = newcar;
     }
   }
@@ -279,7 +278,7 @@ class Dealership{
     return this._plane;
   }
   set plane(newplane){
-    if(typeof newplane == "string"){
+    if(typeof newplane == "object"){
       this._plane = newplane;
     }
   }
@@ -288,13 +287,13 @@ class Dealership{
     console.log("Hello, thank you for coming in to the DimmaDealership");
     if(newcust.license == "CAR"){
       this._customer.makepurchase(this._car.price);
-      this._car = null;
+      //this._car = null;
       console.log("Thank you for purchasing a car. Hope you enjoy!");
       }
     else if (newcust.license == "PLANE") {
         this._customer.makepurchase(this._plane.price);
         console.log("Thank you for purchasing a plane. Hope you enjoy!");
-        this._plane = null;
+      //  this._plane = null;
       }
     else{
       throw new Error("Customer did not present license");
