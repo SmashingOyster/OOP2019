@@ -174,7 +174,11 @@ class Car extends Vehicle{
     }
   }
 drive(){
-  console.log("Driving a "  + color() +"  Model: " + model() + " Car");
+    console.log("Checking license..");
+    if(this._owner.license() == "PLANE"){
+    console.log("License is Valid!");
+    console.log("Driving a "  + color() +"  Model: " + model() + " Car");
+    }
   }
 }
 
@@ -230,8 +234,9 @@ class Plane extends Vehicle{
   }
 
 fly(){
+  console.log("Checking license..");
   if(this._owner.license() == "PLANE"){
-
+  console.log("License is Valid!");
   console.log("Flying a "  + color() +"  Model: " + model() + " Plane");
     }
   }

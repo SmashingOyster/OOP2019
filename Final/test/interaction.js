@@ -41,13 +41,29 @@ describe("Car", function(){
       assert.equal("White", TeslaModelY.color);
       assert.equal(47000, TeslaModelY.price);
     });
+
+      //expect(-> DougDimmadome.balance).to.change.when -> (DougDimmadome.makepurchase(TeslaModelY.price));
+      //expect(() => { x += 1 }).to.alter(() => x, { to: x + 1 });
+    //  assert.isBelow(1200000, DougDimmadome.balance);
+    //  assert.
+      //expect(() => {DougDimmadome.makepurchase(TeslaModelY.price)}).to.alter(() => DougDimmadome.balance, {to: 1153000});
+    //  expect((true)=>{TeslaModelY.keys}).to.equal(true);
+    //  expect(()=>{DougDimmadome.makepurchase(TeslaModelY.price)}).to.be.true;
+    //  assert.isTrue(DougDimmadome.makepurchase(TeslaModelY.price), "Should be true purchase");
+    //  assert.isTrue(DougDimmadome.makepurchase(TeslaModelY.price));
+  });
+  describe("makepurchase()", function(){
     it("should be owned by Doug Dimmadome and allow him to purchase the Tesla model Y", function(){
       let DougDimmadome = new vehicle.Person("Doug Dimmadome", 1200000, 72, "BAD", "CAR");
       assert.equal("Doug Dimmadome", DougDimmadome.name);
       let TeslaModelY = new vehicle.Car("Tesla Model Y", DougDimmadome, "White", true, 47000);
-
-
+      //DougDimmadome.makepurchase(TeslaModelY.price);
+    //  assert.equal(1153000, DougDimmadome.balance);
+    //  let bal = DougDimmadome.makepurchase(TeslaModelY.price);
+      //assert.equal(bal, 1153000)
+    //  assert.equal(1200000, DougDimmadome.balance);
   });
+
   });
 });
 
