@@ -61,32 +61,27 @@ class Person{
   }
   makepurchase(wantedpur){ // maybe just have a check balance & not purchase
     let newbal = 0;
-    console.log("Current Balance: " + this._balance );
-
-
-
-
     console.log("Making a purchase..");
     if(typeof wantedpur == "number"){
       if(wantedpur <= this._balance){
         console.log("Balance meets sufficient funds... Processing transaction...");
-        newbal = this._balance - wantedpur;
-        this.balance = newbal
+        newbal = (this._balance - wantedpur);
+        balance(newbal);
         console.log("Resulting balance... " + this._balance);
 
       }
       else {
         console.log("You have insufficient funds.. checking your credit..");
         if(this._credit == "GOOD"){
-          newbal = wantedpur - this._balance;
-          this.balance = newbal
+          newbal = (wantedpur - this._balance);
+          balance(newbal);
           console.log("Your Credit looks good! Giving you the sufficient funds..");
 
         }
         else if(this._credit == "BAD") {
           console.log("Your Credit is bad.. looks like we cant give you the funds");
-          newbal = this._balance - wantedpur;
-          this.balance = newbal
+          newbal = (this._balance - wantedpur);
+          balance(newbal);
 
         }
         else{
@@ -99,9 +94,6 @@ class Person{
     }
   }
 }
-
-
-
 class Vehicle{
   constructor(model, owner, color, keys, price){
     console.log("Creating Vehicle");
@@ -182,11 +174,7 @@ class Car extends Vehicle{
     }
   }
 drive(){
-    console.log("Checking license..");
-    if(this._owner.license() == "PLANE"){
-    console.log("License is Valid!");
-    console.log("Driving a "  + color() +"  Model: " + model() + " Car");
-    }
+  console.log("Driving a "  + color() +"  Model: " + model() + " Car");
   }
 }
 
@@ -242,9 +230,8 @@ class Plane extends Vehicle{
   }
 
 fly(){
-  console.log("Checking license..");
   if(this._owner.license() == "PLANE"){
-  console.log("License is Valid!");
+
   console.log("Flying a "  + color() +"  Model: " + model() + " Plane");
     }
   }
@@ -252,52 +239,22 @@ fly(){
 
 class Dealership{
   constructor(car, plane, customer){
-
     console.log("Creating a Dealership to work with");
     this._plane = plane;
     this._car = car;
     this._customer = customer;
   }
 
-  get customer(){
-    return this._customer;
-  }
-  set customer(newcust){
-    if(typeof newcust == "object"){
-      this._customer = newcust;
-    }
-  }
-  set car(newcar){
-    if(typeof newcar == "string"){
-      this._car = newcar;
-    }
-  }
-  get car(){
-    return this._car;
-  }
-  get plane(){
-    return this._plane;
-  }
-  set plane(newplane){
-    if(typeof newplane == "string"){
-      this._plane = newplane;
-    }
-  }
-
-  interaction(newcust){
-    console.log("Hello, thank you for coming in to the DimmaDealership");
-    if(newcust.license == "CAR"){
-      this._customer.makepurchase(this._car.price);
-      this._car = null;
-      console.log("Thank you for purchasing a car. Hope you enjoy!");
+  interaction(){
+    console.log("Hello, thank you for coming in to buy a Plane or Car");
+    if(this._cutstomer.license() == "CAR"){
+      this._customer.makepurchase(this._car.price());
       }
-    else if (newcust.license == "PLANE") {
-        this._customer.makepurchase(this._plane.price);
-        console.log("Thank you for purchasing a plane. Hope you enjoy!");
-        this._plane = null;
+    else if (this._customer.license() == "PLANE") {
+        this._customer.makepurchase(this._plane.price());
       }
     else{
-      throw new Error("Customer did not present license");
+      throw new Error("Wrong input for interaction");
       }
     }
 
@@ -322,7 +279,6 @@ Car.BAD_VEHICLE_MODEL_NOTSET = new BadVehicleState("There must be a model for yo
 exports.Plane = Plane;
 exports.Car = Car;
 exports.Person = Person;
-exports.Dealership = Dealership;
 // Ideas: have abstract class handle checking user info
 // have car or plane drive call for a simpler class
 // owner is another class object. Customer, checks user credit

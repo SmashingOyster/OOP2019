@@ -11,7 +11,7 @@ let GordonRamsey = new vehicle.Person("Gordon Ramsey", 100000000, 52, "GOOD", "P
 let CessnaMustang = new vehicle.Plane("Cessna Citation Mustang", GordonRamsey, "White", true, 47000);
 let DougDimmadome = new vehicle.Person("Doug Dimmadome", 1200000, 72, "BAD", "CAR");
 let TeslaModelY = new vehicle.Car("Tesla Model Y", DougDimmadome, "White", true, 47000);
-let DimmaDealership = new vehicle.Dealership(null, null, null);
+let DimmaDealership = new vehicle.Dealership(TeslaModelY, CessnaMustang, DougDimmadome);
 
 describe("Person", function(){
   describe("constructor()", function(){
@@ -54,10 +54,11 @@ describe("Car", function(){
       assert.equal(1153000, DougDimmadome.balance);
     //  let bal = DougDimmadome.makepurchase(TeslaModelY.price);
       //assert.equal(bal, 1153000)
-      assert.equal(1200000, DougDimmadome.balance);
+      //assert.equal(1200000, DougDimmadome.balance);
   });
 
   });
+});
 
 describe("Plane", function(){
   describe("constructor()", function(){
@@ -81,13 +82,14 @@ describe("Dealership", function(){
   });
   describe("Interaction", function(){
   it("should check customer for proper license needed for makepurchase to be called", function(){
-    //let DimmaDealership = new vehicle.Dealership(TeslaModelY, null, DougDimmadome);
+    let DimmaDealership = new vehicle.Dealership(TeslaModelY, null, DougDimmadome);
     DimmaDealership.interaction(DougDimmadome);
   });
 });
 describe("Test Drive", function(){
   it("should check for license and drive the car", function(){
-    let DimmaDealership
+    let DimmaDealership = new vehicle.Dealership(TeslaModelY, CessnaMustang, DougDimmadome);
+    DimmaDealership.testdrive();
   });
-})
+});
 });
