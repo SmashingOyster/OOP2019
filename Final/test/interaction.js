@@ -57,11 +57,11 @@ describe("Car", function(){
       let DougDimmadome = new vehicle.Person("Doug Dimmadome", 1200000, 72, "BAD", "CAR");
       assert.equal("Doug Dimmadome", DougDimmadome.name);
       let TeslaModelY = new vehicle.Car("Tesla Model Y", DougDimmadome, "White", true, 47000);
-      //DougDimmadome.makepurchase(TeslaModelY.price);
-    //  assert.equal(1153000, DougDimmadome.balance);
+      DougDimmadome.makepurchase(TeslaModelY.price);
+      assert.equal(1153000, DougDimmadome.balance);
     //  let bal = DougDimmadome.makepurchase(TeslaModelY.price);
       //assert.equal(bal, 1153000)
-    //  assert.equal(1200000, DougDimmadome.balance);
+      assert.equal(1200000, DougDimmadome.balance);
   });
 
   });
