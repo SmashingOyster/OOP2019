@@ -72,13 +72,13 @@ describe("Plane", function(){
 describe("Dealership", function(){
   describe("constructor()", function(){
     it("should have a customer, Doug Dimmadome", function(){
-      let DimmaDealership = new vehicle.Dealership(DougDimmadome, TeslaModelY, CessnaMustang);
+      let DimmaDealership = new vehicle.Dealership(TeslaModelY, CessnaMustang, DougDimmadome);
       assert.equal("Doug Dimmadome", DimmaDealership.customer.name);
     });
   });
   describe("Interaction", function(){
   it("should check customer for proper license needed for makepurchase to be called", function(){
-    let DimmaDealership = new vehicle.Dealership(DougDimmadome, TeslaModelY, CessnaMustang);
+    let DimmaDealership = new vehicle.Dealership(TeslaModelY, CessnaMustang, DougDimmadome);
 
     /*
     DimmaDealership.car = TeslaModelY;
