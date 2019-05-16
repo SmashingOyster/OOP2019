@@ -303,10 +303,10 @@ class Dealership{
 
   testdrive(){
     console.log("Checking license");
-    if(this._cutstomer.license() == "CAR"){
+    if(this._customer.license == "CAR"){
         this._car.drive();
     }
-    if(this._customer.license() == "PLANE"){
+    if(this._customer.license == "PLANE"){
         this._plane.fly();
     }
   }
