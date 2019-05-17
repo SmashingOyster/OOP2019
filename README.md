@@ -6,6 +6,8 @@ HW1 is the JS assignment. Inside HW1 folder. The testing screenshots inside test
 
 HW3 is in HW3 Folder. This is the C++ version. Testing image should be in the HW3 folder.
 
+HW3JS is the JS version of HW3
+
 HW4 is in the HW4 folder. This is the JS version of a hierarchy
 
 HW5 is in HW5 Folder. This is a hierarchy in c++
